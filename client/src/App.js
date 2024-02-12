@@ -52,17 +52,17 @@ import PrivateRoute from './components/Routes/PrivateRoute'
 import Profile from './pages/User/Profile'
 
 // Styles
-import './styles/CSS/animate.min.css'
-import './styles/CSS/bootstrap.min.css'
-import './styles/CSS/datepicker.css'
-import './styles/CSS/font-awesome.min.css'
-import './styles/CSS/magnific-popup.css'
-import './styles/CSS/nice-select.css'
-import './styles/CSS/normalize.css'
-import './styles/CSS/owl-carousel.css'
-import './styles/CSS/responsive.css'
-import './styles/CSS/slicknav.min.css'
-import './styles/CSS/icofont.css'
+// import './styles/CSS/animate.min.css'
+// import './styles/CSS/bootstrap.min.css'
+// import './styles/CSS/datepicker.css'
+// import './styles/CSS/font-awesome.min.css'
+// import './styles/CSS/magnific-popup.css'
+// import './styles/CSS/nice-select.css'
+// import './styles/CSS/normalize.css'
+// import './styles/CSS/owl-carousel.css'
+// import './styles/CSS/responsive.css'
+// import './styles/CSS/slicknav.min.css'
+// import './styles/CSS/icofont.css'
 import './App.css';
 
 
