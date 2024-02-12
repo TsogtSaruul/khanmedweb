@@ -1,0 +1,724 @@
+/* @import url('https://fonts.admin-googleapis.admin-com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'); */
+
+/* ------------- ROOT VARIABLES -------------*/
+:root {
+    --color-white: #fff;
+    --color-background: #f6f6f9;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-danger: #ff7782;   
+    --color-primary: #7380ec;
+    --color-primary-variant: #111e88; 
+    --color-dark: #363949;
+    --color-dark-variant: #677483;
+    --color-light: rgba(132, 139, 200, 0.admin-18);    
+    --color-info-light: #dce1eb;
+    --color-info-dark: #7d8da1;
+    
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+    --card-border-radius: 2rem;
+
+    --padding-1: 1.2rem;
+    --card-padding: 1.8rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+/* ------------- DARK THEME VARIABLES -------------*/
+.dark-theme-variables {
+    --color-white: #202528;
+    --color-background: #181a1e;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.admin-container {
+    display: grid;
+    grid-template-columns: 12rem auto 20rem;
+    /* grid-template-columns: 2fr 1fr; */
+    gap: 1.8rem;    
+    width: 96%;
+    /* width: 100vw; */
+    min-height: 150vh;
+
+    font-size: 14px;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    border: 0;
+    margin: 0 auto;
+    outline: 0;
+    box-sizing: border-box;
+    appearance: none;   
+    
+    font-family: poppins, sans-serif;
+    font-size: 0.88rem;
+    /* background: var(--color-background); */
+    user-select: none;
+    /* overflow-x: hidden a; */
+    color: var(--color-dark);
+}
+
+.admin-a {
+    color: var(--color-dark);
+}
+
+.admin-img {
+    display: block;
+    width: 100%;
+}
+
+.admin-h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+.admin-h2 {
+    font-size: 1.4rem;
+}
+
+.admin-h3 {
+    font-size: 0.87rem;
+}
+
+.admin-h4 {
+    font-size: 0.8rem;
+}
+
+.admin-h5 {
+    font-size: 0.77rem;
+}
+
+.admin-small {
+    font-size: 0.75rem;
+}
+
+.admin-profile-photo {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.admin-text-muted {
+    color: var(--color-info-dark);
+}
+
+.admin-p {
+    color: var(--color-dark-variant);
+}
+
+.admin-b {
+    color: var(--color-dark);
+}
+
+.admin-primary {
+    color: var(--color-primary);
+}
+
+.admin-danger {
+    color: var(--color-danger);
+}
+
+.admin-success {
+    color: var(--color-success);
+}
+
+.admin-warning {
+    color: var(--color-warning);
+}
+
+.admin-aside {
+    min-height: 100vh;
+}
+
+.admin-aside .admin-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+.admin-aside .admin-logo {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.admin-aside .admin-logo .admin-img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.admin-aside .admin-close {
+    display: none;
+}
+
+
+/*================================== SIDEBAR ================================*/
+.admin-aside .admin-sidebar {
+    display: flex;
+    flex-direction: column;
+    min-height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+
+.admin-aside h3 {
+    font-weight: 500;
+}
+
+.admin-aside .admin-sidebar a {
+    display: flex;
+    background-color: var(--color-background);
+    color: var(--color-info-dark);
+    /* margin-left: 2rem; */
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+
+.admin-aside .admin-sidebar .admin-a span {
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+
+/* .admin-aside .admin-sidebar .admin-a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+} */
+
+.admin-aside .admin-sidebar .admin-a.admin-active {
+    background: var(--color-light);
+    color: var(var(--color-primary));
+    margin-left: 0;
+}
+
+.admin-aside .admin-sidebar .admin-a.admin-active::before {
+    content: "";
+    width: 6px;
+    height: 100%;
+    background: var(--color-primary);
+}
+
+.admin-aside .admin-sidebar .admin-a.admin-active span {
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+.admin-aside .admin-sidebar a:hover {
+    color: var(--color-primary);
+}
+
+.admin-aside .admin-sidebar a:hover span {
+    margin-left: 1rem;
+}
+
+.admin-aside .admin-sidebar .admin-message-count {
+    background: var(--color-danger);
+    color: var(--color-white);
+    padding: 2px 10px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+/*============================== .admin-main ===============================*/
+
+.admin-main {
+    margin-top: 1.4rem;
+}
+
+.admin-main .admin-date {
+    display: inline-block;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+}
+
+.admin-main .admin-date input {
+    background: transparent;
+    color: var(--color-dark);
+}
+
+.admin-main .admin-insights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.admin-main .admin-insights > div {
+    /* background: var(--color-white); */
+    background-color: var(--color-background);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.admin-main .admin-insights > div:hover {
+    box-shadow: none;
+}
+
+.admin-main .admin-insights > div span {
+    background: var(--color-primary);
+    padding: 0.5rem;
+    /* border-radius: 50%; */
+    border-radius: 2rem;
+    place-items: center;
+    /* color: var(--color-white); */
+    /* font-size: 8rem; */
+}
+
+/* .admin-main .admin-insights > div.admin-expenses span {
+    background-color: var(--color-danger);
+}
+
+.admin-main .admin-insights > div.admin-income span {
+    background-color: var(--color-success);
+} */
+
+.admin-main .admin-insights > div .admin-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.admin-main .admin-insights h3 {
+    margin: 1rem 0 0.6rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.admin-main .admin-insights .admin-progress {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+.admin-main .admin-insights svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+.admin-main .admin-insights svg circle {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14px;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+.admin-main .admin-insights .admin-sales svg circle {
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+.admin-main .admin-insights .admin-expenses svg circle {
+    stroke-dashoffset: 20;
+    stroke-dasharray: 80;
+}
+
+.admin-main .admin-insights .admin-income svg circle {
+    stroke-dashoffset: 35;
+    stroke-dasharray: 110;
+}
+
+.admin-main .admin-insights .admin-progress .admin-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-main .admin-insights small {
+    margin-top: 1.3rem;
+    display: block;
+}
+
+/* ======================= RECENT ORDERS ========================= */
+
+.admin-main .admin-recent-orders {
+    margin-top: 2rem;
+}
+
+.admin-main .admin-recent-orders h2 {
+    margin-bottom: 0.8rem;
+}
+
+.admin-main .admin-recent-orders table {
+    background: var(--color-white);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.admin-main .admin-recent-orders table:hover {
+    box-shadow: none;
+}
+
+.admin-main table tbody td {
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+.admin-main table tbody tr:last-child td {
+    border: none;
+}
+
+.admin-main .admin-recent-orders a {
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+/*=================== RIGHT =======================*/
+.admin-right {
+    margin-top: 1.4rem;
+}
+
+.admin-right .admin-top {
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.admin-right .admin-top button{
+    display: none;
+}
+
+.admin-right .admin-theme-toggler {
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.admin-right .admin-theme-toggler span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-right .admin-theme-toggler span.admin-active {
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.admin-right .admin-top .admin-profile {
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+/*================= RECENT UPDATES ===================*/
+.admin-right .admin-recent-updates {
+    margin-top: 1rem;
+}
+
+.admin-right .admin-recent-updates h2 {
+    margin-bottom: 0.8rem;
+}
+
+.admin-right .admin-recent-updates .admin-updates {
+    background: var(--color-white);
+    /* background: var(--color-background); */
+    /* padding: var(--card-padding); */
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+    transition: all 300ms ease;
+}
+
+.admin-right .admin-recent-updates .admin-updates:hover {
+    box-shadow: none;
+}
+
+.admin-right .admin-recent-updates .admin-updates .admin-update {
+    display: grid;
+    grid-template-columns: 2.6rem auto;
+    gap: 1rem;
+    background: var(--color-background);
+    padding: var(--padding-1);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+}
+
+/*================= SALES ANALYTICS ===================*/
+
+.admin-right .admin-sales-analytics {
+    margin-top: 2rem;
+}
+
+.admin-right .admin-sales-analytics {
+    margin-bottom: 0.8rem;
+}
+
+.admin-right .admin-sales-analytics .admin-item {
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-3);
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+}
+
+.admin-right .admin-sales-analytics .admin-item:hover {
+    box-shadow: none;
+}
+
+.admin-right .admin-sales-analytics .admin-item .admin-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin: 0;
+    width: 100%;
+}
+
+.admin-right .admin-sales-analytics .admin-item .admin-icon {
+    padding: 0.6rem;
+    color: var(--color-white);
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+}
+
+.admin-right .admin-sales-analytics .admin-item.admin-offline .admin-icon {
+    background: var(--color-danger);
+}
+
+.admin-right .admin-sales-analytics .admin-item.admin-customers .admin-icon {
+    background: var(--color-success);
+}
+
+.admin-right .admin-sales-analytics .admin-add-product {
+    background: transparent;
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-right .admin-sales-analytics .admin-add-product:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.admin-right .admin-sales-analytics .admin-add-product div {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.admin-right .admin-sales-analytics .admin-add-product div h3 {
+    font-weight: 600;
+}
+
+
+/*================= MEDIA QUERIES ===================*/
+@media screen and (max-width: 1500px) {
+    .admin-main .admin-insights {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/*================= MEDIA QUERIES ===================*/
+
+@media screen and (max-width: 1200px) {
+    .admin-container {
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    .admin-aside .admin-logo h2 {
+        display: none;
+    }
+
+    .admin-aside .admin-sidebar h3 {
+        display: none;
+    }
+
+    .admin-aside .admin-sidebar a {
+        width: 5.6rem;
+    }
+
+    .admin-aside .admin-sidebar a:last-child {
+        position: relative;
+        margin-top: 1.8rem;        
+    }
+
+    .admin-main .admin-insights {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .admin-main .admin-recent-orders {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 8.8rem;
+    }
+
+    .admin-main .admin-recent-orders table {
+        width: 83vw;
+    }
+
+    .admin-main table thead tr th:first-child,
+    .admin-main table tbody tr td:last-child,
+    .admin-main table tbody tr td:first-child {
+        display: none;
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .admin-container {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .admin-aside {
+        position: fixed;
+        left: -100%;
+        background: var(--color-white);
+        width: 18rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        min-height: 100vh;
+        padding-right: var(--card-padding);
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        }
+    }
+
+    .admin-aside .admin-logo {
+        margin-left: 1rem;
+    }
+
+    .admin-aside .admin-logo h2 {
+        display: inline;
+    }
+
+    .admin-aside .admin-sidebar h3 {
+        display: inline;
+    }
+
+    .admin-aside .admin-sidebar a {
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    .admin-aside .admin-sidebar a:last-child {
+        position: absolute;
+        bottom: 5rem;
+    }
+
+    .admin-aside .admin-close {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .admin-main {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    .admin-main .admin-recent-orders {
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+
+    .admin-main .admin-recent-orders table {
+        width: 100%;
+        margin: 0;
+    }
+
+    .admin-right {
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    .admin-right .admin-top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        padding: 0 0.8rem;
+        height: 4.6rem;
+        background: var(--color-white);
+        width: 100%;
+        margin: 0;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+    }
+
+    .admin-right .admin-top .admin-theme-toggler {
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+
+    .admin-right .admin-profile .admin-info {
+        display: none;
+    }
+
+    .admin-right .admin-top button {
+        display: inline-block;
+        background: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+
+    .admin-right .admin-top button span {
+        font-size: 2rem;
+    }
+}
